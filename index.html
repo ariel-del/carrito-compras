@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Tienda de alimentos organicos karen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="favicon/logo.jpg">
+    <link rel="stylesheet" href="../res/css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+ <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      <div class="hamburger-menu">
+              <img src="favicon/logo.jpg" alt="Logo Karen" style="float: left; margin-right: 10px;">
+      </div>
+      <h1>Tienda Karen</h1>
+    </header>
+    <main>
+      <div>
+        <div class="abajo">
+        <p id="info-carrito" style="background: green; font-size: 2em; color: black" >
+        </p>
+        <button id="reset">Vaciar carrito</button>
+        <button id="verCarritoBtn" data-bs-toggle="modal" data-bs-target="#carritoModal">Ver carrito</button>
+      </div>
+      </div>
+      <hr>
+      <!--p id="filtros categorias"-->
+        Filtros:
+         <a href="#harinas" data-cat="1">Harinas</a>
+      <a href="#lacteos" data-cat="2">Lácteos</a>
+      <a href="#cereales" data-cat="3">Cereales</a>
+        <a href="#" data-cat="0">Limpiar</a> 
+    </p>
+      <hr>
+
+      <div id="harinas">
+      <div id="productos">
+        <div>
+          <img src="img/pan.jpg" alt="pan organico" width="300px" height="300px">
+          <p><strong>Prod 1:</strong> <em>$100</em></p>
+          <button data-id="1" data-val="100" data-cat="1" class="add">
+            Agregar
+          </button>
+          <button data-id="1" data-val="100" data-cat="1" class="del">
+            Quitar
+          </button>
+          <button data-id="1" data-val="100" data-cat="1" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(1)">Detalles</button>
+        </div>
+        <div>
+          <img src="img/pan_blanco.jpg" alt="pan_blanco" width="300px" height="300px">
+          <p><strong>Prod 2:</strong> <em>$200</em></p>
+          <button data-id="2" data-val="200" data-cat="2" class="add">
+            Agregar
+          </button>
+          <button data-id="2" data-val="200" data-cat="2" class="del">
+            Quitar
+          </button>
+          <button data-id="2" data-val="200" data-cat="2" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(2)">Detalles</button>
+        </div>
+      
+        <div>
+          <img src="img/grillo.jfif" alt="harina de grillo" width="300px" height="300px">
+          <p><strong>Prod 3:</strong> <em>$300</em></p>
+          <button data-id="3" data-val="300" data-cat="1" class="add">
+            Agregar
+          </button>
+          <button data-id="3" data-val="300" data-cat="1" class="del">
+            Quitar
+          </button>
+          <button data-id="3" data-val="300" data-cat="3" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(3)">Detalles</button>
+        </div>
+      </div>
+<br>
+      <div id="lacteos">
+        <div id="productos">
+        <div>
+          <img src="img/leche.png" alt="leche organico" width="300px" height="300px">
+          <p><strong>Prod 4:</strong> <em>$400</em></p>
+          <button data-id="4" data-val="400" data-cat="2" class="add">
+            Agregar
+          </button>
+          <button data-id="4" data-val="400" data-cat="2" class="del">
+            Quitar
+          </button>
+          <button data-id="4" data-val="400" data-cat="4" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(4)">Detalles</button>
+        </div>
+      
+        <div>
+          <img src="img/yogur.jpg" alt="yogur organico" width="300px" height="300px">
+          <p><strong>Prod 5:</strong> <em>$500</em></p>
+          <button data-id="5" data-val="500" data-cat="1" class="add">
+            Agregar
+          </button>
+          <button data-id="5" data-val="500" data-cat="1" class="del">
+            Quitar
+          </button>
+          <button data-id="5" data-val="500" data-cat="5" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(5)">Detalles</button>
+        </div>
+      
+        <div>
+          <img src="img/coco.jpg" alt="coco organico" width="300px" height="300px">
+          <p><strong>Prod 6:</strong> <em>$600</em></p>
+          <button data-id="6" data-val="600" data-cat="2" class="add">
+            Agregar
+          </button>
+          <button data-id="6" data-val="600" data-cat="2" class="del">
+            Quitar
+          </button>
+          <button data-id="6" data-val="600" data-cat="6" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(6)">Detalles</button>
+        </div>
+      </div>
+<br>
+      <div id="cereales">
+        <div id="productos">
+        <div>
+          <img src="img/arroz.jfif" alt="arroz organico" width="300px" height="300px">
+          <p><strong>Prod 7:</strong> <em>$700</em></p>
+          <button data-id="7" data-val="700" data-cat="1" class="add">
+            Agregar
+          </button>
+          <button data-id="7" data-val="700" data-cat="1" class="del">
+            Quitar
+          </button>
+          <button data-id="7" data-val="700" data-cat="7" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(7)">Detalles</button>
+        </div>
+        <div>
+          <img src="img/avena.jpg" alt="avena organico" width="300px" height="300px">
+          <p><strong>Prod 8:</strong> <em>$800</em></p>
+          <button data-id="8" data-val="800" data-cat="2" class="add">
+            Agregar
+          </button>
+          <button data-id="8" data-val="800" data-cat="2" class="del">
+            Quitar
+          </button>
+          <button data-id="8" data-val="800" data-cat="8" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(8)">Detalles</button>
+        </div>
+        <div>
+          <img src="img/galleta.jpg" alt="galletas organico" width="300px" height="300px">
+          <p><strong>Prod 9:</strong> <em>$900</em></p>
+          <button data-id="9" data-val="900" data-cat="1" class="add">
+            Agregar
+          </button>
+          <button data-id="9" data-val="900" data-cat="1" class="del">
+            Quitar
+          </button>
+          <button data-id="9" data-val="900" data-cat="9" class="add" data-bs-toggle="modal" 
+          data-bs-target="#productModal" onclick="showProductDetails(9)">Detalles</button>
+        </div>
+      </div>
+      <br>
+
+      <button id="irACheckoutBtn" data-bs-toggle="modal" data-bs-target="#checkoutModal" onclick="mostrarBotonesCheckout()">Continuar al Checkout</button>
+
+<!-- Modal -->
+<div class="modal" id="productModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" id="productModalLabel">Detalles del Producto</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+<!-- Modal Body -->
+<div class="modal-body" id="productDetails">
+</div>
+<!-- Modal Footer -->
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" id="addToCartBtn">Agregar al Carrito</button>
+  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+</div>
+</div>
+</div>
+</div>
+<!--fin-->
+<!-- Modal del Carrito ,modal 2 -->
+<div class="modal" id="carritoModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Detalles del Carrito</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="carritoDetails">
+
+<!-- Modal del formulario ,modal 3 -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Información del Cliente y Pago</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulario para la información del cliente y pago -->
+        <form id="checkoutForm">
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="lugarEntrega">Lugar de Entrega:</label>
+          <input type="text" id="lugarEntrega" name="lugarEntrega" required>
+          <label for="fechaEntrega">Fecha de Entrega:</label>
+          <input type="date" id="fechaEntrega" name="fechaEntrega" required>
+          <hr>
+          <label for="metodoPago">Método de Pago:</label>
+          <select id="metodoPago" name="metodoPago" required>
+            <option value="tarjeta">Tarjeta de Crédito</option>
+            <option value="efectivo">Efectivo</option>
+          </select>
+          <label for="cuotas">Cuotas:</label>
+          <input type="number" id="cuotas" name="cuotas" min="1" value="1" required>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="realizarCheckout()">Realizar Checkout</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="irACheckoutBtn" data-bs-toggle="modal" data-bs-target="#checkoutModal" onclick="mostrarBotonesCheckout()">Continuar al Checkout</button>
+
+        <!-- Contenido del carrito -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="realizarCheckout()">Realizar Checkout</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="cancelarCheckout()">Cancelar Checkout</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="js/script.js"></script>
+<script>
+</script>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-item">
+        <h3>Contacto</h3>
+        <p>Dirección: Calle Orgánica, 123</p>
+        <p>Teléfono: 123-456-7890</p>
+      </div>
+      <div class="footer-item">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Promociones</a></li>
+        </ul>
+      </div>
+      <div class="footer-item">
+        <h3>Redes Sociales</h3>
+        <ul>
+          <li><a href="#" class="social-icon">Facebook</a></li>
+          <li><a href="#" class="social-icon">Twitter</a></li>
+          <li><a href="#" class="social-icon">Instagram</a></li>
+        </ul>
+      </div>
+  </footer>
+  </body>
+</html>
+
